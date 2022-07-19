@@ -1,0 +1,17 @@
+[package]
+name = "fish"
+version = "0.1.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+authors = ["Edward Kmett <ekmett@gmail.com>"]
+readme = "README.md"
+
+# these are necessary to allow llvm bitcode extraction from the crates
+[profile.dev]
+lto = true
+
+[profile.release]
+lto = true
+
+[lib]
+crate-type = ["cdylib"]
